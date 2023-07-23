@@ -52,45 +52,64 @@ class ViewController: UIViewController {
             topLeftButton.setTitleColor(.red, for: .normal)
             topMiddleButton.setTitleColor(.red, for: .normal)
             topRightButton.setTitleColor(.red, for: .normal)
+        case .MiddleRow:
+            middleLeft.setTitleColor(.red, for: .normal)
+            middleMiddle.setTitleColor(.red, for: .normal)
+            middleRight.setTitleColor(.red, for: .normal)
+        case .BottomRow:
+            bottomLeft.setTitleColor(.red, for: .normal)
+            bottomMiddle.setTitleColor(.red, for: .normal)
+            bottomRight.setTitleColor(.red, for: .normal)
+        case .LeftColumn:
+            topLeftButton.setTitleColor(.red, for: .normal)
+            middleLeft.setTitleColor(.red, for: .normal)
+            bottomLeft.setTitleColor(.red, for: .normal)
+        case .MiddleColumn:
+            topMiddleButton.setTitleColor(.red, for: .normal)
+            middleMiddle.setTitleColor(.red, for: .normal)
+            bottomMiddle.setTitleColor(.red, for: .normal)
+        case .RightColumn:
+            topRightButton.setTitleColor(.red, for: .normal)
+            middleRight.setTitleColor(.red, for: .normal)
+            bottomRight.setTitleColor(.red, for: .normal)
+        case .ForwardDiagonal:
+            topLeftButton.setTitleColor(.red, for: .normal)
+            middleMiddle.setTitleColor(.red, for: .normal)
+            bottomRight.setTitleColor(.red, for: .normal)
+        case .BackwardDiagonal:
+            topRightButton.setTitleColor(.red, for: .normal)
+            middleMiddle.setTitleColor(.red, for: .normal)
+            bottomLeft.setTitleColor(.red, for: .normal)
         default: break
         }
     }
-    
-    
     
     @IBAction func choseMark(_ sender: UIButton) {
         var won : TicTacToe = .None
         print(sender.tag)
         switch  sender.tag {
         case 1: game.place(inRow: 0, andColumn: 0)
-            won = game.haveTTT(onRow: 0, andColumn: 0)
+            won = game.haveTTT()
         case 2: game.place(inRow: 0, andColumn: 1)
-            won = game.haveTTT(onRow: 0, andColumn: 1)
+            won = game.haveTTT()
         case 3: game.place(inRow: 0, andColumn: 2)
-            won = game.haveTTT(onRow: 0, andColumn: 2)
+            won = game.haveTTT()
         case 4: game.place(inRow: 1, andColumn: 0)
-            won = game.haveTTT(onRow: 1, andColumn: 0)
+            won = game.haveTTT()
         case 5: game.place(inRow: 1, andColumn: 1)
-            won = game.haveTTT(onRow: 1, andColumn: 1)
+            won = game.haveTTT()
         case 6: game.place(inRow: 1, andColumn: 2)
-            won = game.haveTTT(onRow: 1, andColumn: 2)
+            won = game.haveTTT()
         case 7: game.place(inRow: 2, andColumn: 0)
-            won = game.haveTTT(onRow: 2, andColumn: 0)
+            won = game.haveTTT()
         case 8: game.place(inRow: 2, andColumn: 1)
-            won = game.haveTTT(onRow: 2, andColumn: 1)
+            won = game.haveTTT()
         case 9: game.place(inRow: 2, andColumn: 2)
-            won = game.haveTTT(onRow: 2, andColumn: 2)
+            won = game.haveTTT()
         default: break
         }
         // print(won)
         showTicTacToe(withState: won)
         setBoard()
     }
-    
-    
-    
-    
-    
-    
 }
-
